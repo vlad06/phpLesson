@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Bienvenue sur notre site</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script type="text/javascript" src="siteMonoPage.js"></script>
+		<script type="text/javascript">
+			function clearError(){
+				document.getElementById("lblError").innerHTML="";
+			}
+		</script>
+		<style media="screen">
+			#map {
+				height: 500px;
+				width: 60%;
+				margin: 10px;
+				border: 2px solid black;
+			}
+			html {
+				height: 100%;
+			}
+			body {
+				height: 100%;
+				margin:0px;
+				padding:0px;
+				font-family:Comic sans MS;
+				color:navy;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<div class="row">
+				<div class="col-xs-3">
+					<a href="siteMonoPage.html" id="link"><img src="abi.jpg" alt=""></a>
+				</div>
+				<div class="col-xs-9">
+					<h1>ABI : Bienvenue sur notre site Web</h1>
+				</div>
+			</div>
+		</div>
+		<div id="body">
+			<div class="row">
+				<div class="col-xs-5">
+					<div id="map"></div>
+				</div>
+				<div class="col-xs-7">
+					<h2>Pour vous connecter...</h2>
+					<form action="" onsubmit="return controleIdentAjax(document.getElementById('login'),document.getElementById('password'));">
+						<table width="50%">
+							<tbody>
+								<tr>
+									<td>Entrez votre nom</td>
+									<td><input type="text" name="email" id="login" onfocus="clearError();" /></td>
+								</tr>
+								<tr>
+									<td>Entrez votre mot de passe</td>
+									<td><input type="text" name="pssw" id="password" onfocus="this.value='';" /></td>
+								</tr>
+								<tr>
+									<td align="right"><input type="submit" value="Envoyer" /></td>
+									<td align="left"><input type="reset" value="Recommencer" /></td>
+								</tr>
+								<tr>
+									<td colspan="2" align="center"><font color="red"><span id="lblError"></span></font>&nbsp;</td>
+								</tr>
+							</tbody>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script>
+			function initMap() {
+				var ukulele = {lat:43.655412 , lng:7.150925 };
+				var map = new google.maps.Map(document.getElementById('map'), {zoom:4, center:ukulele});
+				var marker = new google.maps.Marker({position: ukulele, map:map});
+			}
+		</script>
+
+	 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvWkOs93JSnuB-en1Emn7UWz1IQq16wOY&callback=initMap">
+	 	</script>
+
+
+	</body>
+</html>

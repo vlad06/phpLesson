@@ -1,0 +1,33 @@
+-- phpMyAdmin SQL Dump
+-- version 2.6.1
+-- http://www.phpmyadmin.net
+-- 
+-- Serveur: localhost
+-- Généré le : Lundi 12 Novembre 2007 à 16:42
+-- Version du serveur: 4.1.9
+-- Version de PHP: 4.3.10
+-- 
+-- Base de données: `video`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Structure de la table `location`
+-- 
+
+CREATE TABLE `location` (
+  `NUM_ADHERENT` int(4) NOT NULL default '0',
+  `ID_FILM` int(6) NOT NULL default '0',
+  `CODE_SUPPORT` char(1) NOT NULL default '',
+  `DEBUT_LOCATION` date NOT NULL default '0000-00-00',
+  `DATE_RETOUR` date default NULL,
+  `TARIF_APPLIQUE` decimal(5,2) default NULL,
+  PRIMARY KEY  (`NUM_ADHERENT`,`ID_FILM`,`CODE_SUPPORT`,`DEBUT_LOCATION`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- 
+-- Contenu de la table `location`
+-- 
+
+        

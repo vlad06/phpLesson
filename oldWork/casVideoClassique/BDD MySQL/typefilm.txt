@@ -1,0 +1,33 @@
+-- phpMyAdmin SQL Dump
+-- version 2.6.1
+-- http://www.phpmyadmin.net
+-- 
+-- Serveur: localhost
+-- Généré le : Lundi 12 Novembre 2007 à 16:44
+-- Version du serveur: 4.1.9
+-- Version de PHP: 4.3.10
+-- 
+-- Base de données: `video`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Structure de la table `typefilm`
+-- 
+
+CREATE TABLE `typefilm` (
+  `CODE_TYPE_FILM` char(3) NOT NULL default '',
+  `LIB_TYPE_FILM` varchar(25) NOT NULL default '',
+  PRIMARY KEY  (`CODE_TYPE_FILM`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- 
+-- Contenu de la table `typefilm`
+-- 
+
+INSERT INTO `typefilm` VALUES ('AVE', 'Aventure');
+INSERT INTO `typefilm` VALUES ('COM', 'Comédie');
+INSERT INTO `typefilm` VALUES ('DES', 'Dessin animé');
+INSERT INTO `typefilm` VALUES ('POL', 'Policier');
+        

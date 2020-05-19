@@ -1,0 +1,39 @@
+-- phpMyAdmin SQL Dump
+-- version 2.6.1
+-- http://www.phpmyadmin.net
+-- 
+-- Serveur: localhost
+-- Généré le : Lundi 12 Novembre 2007 à 16:39
+-- Version du serveur: 4.1.9
+-- Version de PHP: 4.3.10
+-- 
+-- Base de données: `video`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Structure de la table `adherent`
+-- 
+
+CREATE TABLE `adherent` (
+  `NUM_ADHERENT` int(4) NOT NULL auto_increment,
+  `NOM_ADHERENT` varchar(25) NOT NULL default '',
+  `PRENOM_ADHERENT` varchar(20) NOT NULL default '',
+  `ADR_ADHERENT` varchar(32) NOT NULL default '',
+  `ADR2_ADHERENT` varchar(32) default NULL,
+  `CODEPOSTAL_ADHERENT` varchar(5) default NULL,
+  `VILLE_ADHERENT` varchar(25) default NULL,
+  `TEL_ADHERENT` varchar(15) default NULL,
+  `DATE_ADHESION` datetime NOT NULL default '0000-00-00 00:00:00',
+  `REF_PIECE_IDENTITE` varchar(20) default NULL,
+  PRIMARY KEY  (`NUM_ADHERENT`),
+  KEY `NOM_ADHERENT` (`NOM_ADHERENT`,`PRENOM_ADHERENT`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+-- 
+-- Contenu de la table `adherent`
+-- 
+
+INSERT INTO `adherent` VALUES (1, 'Adh1', 'PrénomAdh1', 'adrAdh1', '', '06300', 'Nice', '0102030405', '2005-12-15 12:01:41', '');
+INSERT INTO `adherent` VALUES (2, 'Adh2', 'prénomadh2', '32, adr adh 2', NULL, '06500', 'Menton', NULL, '2006-10-03 00:00:00', 'CNI 542345678');

@@ -1,0 +1,35 @@
+-- phpMyAdmin SQL Dump
+-- version 2.6.1
+-- http://www.phpmyadmin.net
+-- 
+-- Serveur: localhost
+-- Généré le : Lundi 12 Novembre 2007 à 16:42
+-- Version du serveur: 4.1.9
+-- Version de PHP: 4.3.10
+-- 
+-- Base de données: `video`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Structure de la table `star`
+-- 
+
+CREATE TABLE `star` (
+  `ID_STAR` int(4) NOT NULL auto_increment,
+  `NOM_STAR` varchar(25) NOT NULL default '',
+  `PRENOM_STAR` varchar(25) default NULL,
+  PRIMARY KEY  (`ID_STAR`),
+  KEY `NOM_STAR` (`NOM_STAR`,`PRENOM_STAR`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+-- 
+-- Contenu de la table `star`
+-- 
+
+INSERT INTO `star` VALUES (1, 'Pitt', 'Brad');
+INSERT INTO `star` VALUES (2, 'De Niro', 'Robert');
+INSERT INTO `star` VALUES (3, 'Binoche', 'Juliette');
+INSERT INTO `star` VALUES (4, 'Allen', 'Woody');
+        

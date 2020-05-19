@@ -1,0 +1,173 @@
+/* feuille de styles CSS pour Cas Vidéo */
+/* ------------------------------------ */
+
+/* styles communs */
+/* -------------- */
+
+/* tout en arial bleu */
+* {
+	font-family: arial;
+	color:blue;
+}
+
+/* pas de liens soulignés */
+a {
+	text-decoration: none;
+}
+
+/* espacement interne tableaux */
+td {
+	padding : 5px;
+}
+
+/* titre */
+h1, h2 {
+	color:blue;
+	font-family: arial;
+	text-align: center;
+}
+
+/* message erreur et warnings */
+.erreur {
+	font-weight: bold;
+	font-style: italic;
+}
+
+/* portion de texte important */
+.important{
+	font-size: 1.3em;
+}
+
+/* div largeur totale */
+.cent{
+	width:100%;
+}
+
+/* div demi-largeur */	
+.cinquante{
+	width:50%;
+}
+
+/* centrage des textes */
+.centrer{
+	text-align: center;
+}
+
+
+/* 1° ligne entete */
+/* --------------- */
+header {
+	width:100%;
+}
+
+header table {
+	width:100%;
+}
+
+/* textes en titre */
+.titrevideo {
+	font-size: 4em;
+	font-family: "arial black";
+	text-align: center;
+}
+
+.soustitrevideo {
+	text-align: center;
+	font-size: 1.2em;
+	
+}
+
+/* form login */
+.divCache{
+	visibility:hidden;
+	height:auto;
+	position:absolute;
+	top:100px;
+	right:50px;
+	border:dotted 3px;
+	background-color:lightblue;
+}
+
+
+/* menu de navigation  : vertial à G */
+/* ----------------------------------*/
+nav {
+	width:28%;
+	float:left;
+}
+
+nav table td {
+	height:50px;
+	font-size: 1.4em;
+}
+
+
+/* conteneur principal : à D */
+/* ------------------------- */
+main {
+	width:70%;
+	float:right;
+}
+
+
+/* page en construction */
+/* -------------------- */
+/* logo */
+.constrLogo {
+	float:left;
+	width:18%;
+	height:4em;
+	text-align:right;
+}
+
+/* texte */
+.constrTitre{
+	text-align: left;
+	margin:0;
+	padding-left: 5px;
+	width:80%;
+	float:left;
+}
+
+
+/* liste des films */
+/* --------------- */
+/* tableau */
+.listefilms, .recap{
+	margin:auto;
+	border:#0000FF 3px solid ;
+}
+
+.listefilms{
+	width:80%;
+}
+
+/* titre colonnes */
+.listefilms th {
+	background: lightgrey;
+	border :#0000FF 1px solid;
+}
+
+/* cellules */
+.listefilms td {
+	border :#0000FF 1px solid;
+}
+
+
+/* racap avant résa */
+/* ---------------- */
+/* tableau */
+.recap{
+	width:40%;
+	text-align: left;
+	background: lightgrey;
+	padding : 5px;
+}
+
+/* administration */
+/* -------------- */
+.admin {
+	background: lightblue;
+}
+
+

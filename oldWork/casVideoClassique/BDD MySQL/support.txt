@@ -1,0 +1,31 @@
+-- phpMyAdmin SQL Dump
+-- version 2.6.1
+-- http://www.phpmyadmin.net
+-- 
+-- Serveur: localhost
+-- Généré le : Lundi 12 Novembre 2007 à 16:44
+-- Version du serveur: 4.1.9
+-- Version de PHP: 4.3.10
+-- 
+-- Base de données: `video`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Structure de la table `support`
+-- 
+
+CREATE TABLE `support` (
+  `CODE_SUPPORT` char(1) NOT NULL default '',
+  `LIB_SUPPORT` varchar(12) NOT NULL default '',
+  PRIMARY KEY  (`CODE_SUPPORT`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- 
+-- Contenu de la table `support`
+-- 
+
+INSERT INTO `support` VALUES ('D', 'DVD');
+INSERT INTO `support` VALUES ('K', 'K7 Vidéo');
+INSERT INTO `support` VALUES ('B', 'Blue Ray');        

@@ -1,0 +1,38 @@
+-- phpMyAdmin SQL Dump
+-- version 2.6.1
+-- http://www.phpmyadmin.net
+-- 
+-- Serveur: localhost
+-- Généré le : Lundi 12 Novembre 2007 à 16:41
+-- Version du serveur: 4.1.9
+-- Version de PHP: 4.3.10
+-- 
+-- Base de données: `video`
+-- 
+
+-- --------------------------------------------------------
+
+-- 
+-- Structure de la table `film`
+-- 
+
+CREATE TABLE `film` (
+  `ID_FILM` int(6) NOT NULL auto_increment,
+  `CODE_TYPE_FILM` char(3) NOT NULL default '',
+  `ID_REALIS` int(4) NOT NULL default '0',
+  `TITRE_FILM` varchar(20) NOT NULL default '',
+  `ANNEE_FILM` int(4) NOT NULL default '0',
+  `REF_IMAGE` varchar(50) default NULL,
+  `RESUME` varchar(255) default NULL,
+  PRIMARY KEY  (`ID_FILM`),
+  KEY `CODE_TYPE_FILM` (`CODE_TYPE_FILM`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+-- 
+-- Contenu de la table `film`
+-- 
+
+INSERT INTO `film` VALUES (1, 'AVE', 1, 'Mon premier film', 2005, 'lamome.jpg', 'résumé film 1');
+INSERT INTO `film` VALUES (2, 'POL', 3, 'mon 2° film', 2007, 'coeurdeshommes2.jpg', 'résumé 2° film');
+INSERT INTO `film` VALUES (3, 'AVE', 1, 'Mon 3° film', 2003, 'bigmovie.jpg', 'résumé 3° film');
+        
