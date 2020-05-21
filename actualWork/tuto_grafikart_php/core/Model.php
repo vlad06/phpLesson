@@ -7,8 +7,12 @@ class Model {
   public $conf = "default";
   public $table = false;
   public $db;
+  public $primaryKey = "id";
 
   public function __construct() {
+    if($this->table === false) {
+      $this->table = strtolower(get_class($this))."s";
+    }
     // Connexion à la bdd
     $conf = Conf::$databases[$this->conf];
     if(isset(Model::$connections[$this->conf])) {
@@ -23,7 +27,6 @@ class Model {
         array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8")
       );
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-
       Model::$connections[$this->conf] = $pdo;
       $this->db = $pdo;
     } catch(PDOException $e){
@@ -33,14 +36,22 @@ class Model {
           die("Impossible de se connecter à la base de donnée");
         }
     }
-    
-    if($this->table === false) {
-      $this->table = strtolower(get_class($this))."s";
-    }
   }
 
   public function find($req) {
-    $sql = "select * from ".$this->table." as ".get_class($this)." ";
+    $sql = "SELECT ";
+
+    if(isset($req["fields"])) {
+      if(is_array($req["fields"])) {
+        $sql .= implode(", ", $req["fields"]);
+      } else {
+        $sql .= $req["fields"];
+      }
+    } else {
+      $sql .= "*";
+    }
+
+    $sql .= " FROM ".$this->table." as ".get_class($this)." ";
 
     if(isset($req["conditions"])) {
       $sql .= "where ";
@@ -57,6 +68,12 @@ class Model {
         $sql .= implode(" AND ", $cond);
       }
     }
+    if(isset($req["limit"])) {
+      $sql .= "LIMIT ".$req["limit"];
+    }
+
+
+
     $pre = $this->db->prepare($sql);
     $pre->execute();
     return $pre->fetchAll(PDO::FETCH_OBJ);
@@ -66,6 +83,13 @@ class Model {
     return current($this->find($req));
   }
 
+  public function findCount($conditions) {
+    $res = $this->findFirst(array(
+      "fields" => "COUNT(".$this->primaryKey.") as count",
+      "conditions" => $conditions
+    ));
+    return $res->count;
+  }
 }
 
 ?>

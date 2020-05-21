@@ -11,8 +11,11 @@ class Controller {
   /**
    * @param $request : objet request de notre application
    */
-  function __construct($request) {
-    $this->request = $request;
+  function __construct($request = null) {
+    if($request) {
+      $this->request = $request;
+    }
+    
   }
 
   /**
@@ -68,6 +71,17 @@ class Controller {
     $this->set("message", $message);
     $this->render("/errors/404");
     die();
+  }
+
+  /**
+   * Permet d'appeler un controller depuis ne vue
+   */
+  function request($controller, $action) {
+    $controller .= "Controller";
+    require_once ROOT.DS."controller".DS.$controller.".php";
+    $c = new $controller();
+    return $c->$action();
+
   }
 
 }

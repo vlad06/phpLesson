@@ -17,6 +17,20 @@ class Router {
 
   }
 
+  /**
+   * Connect
+   */
+  static function connect($redir, $url) {
+
+  }
+
+  /**
+   * 
+   */
+  static function url($url) {
+    return $url;
+  }
+
 }
 
 ?>
