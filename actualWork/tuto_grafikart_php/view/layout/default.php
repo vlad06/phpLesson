@@ -8,7 +8,7 @@
 </head>
 <body>
 
-
+<!-- style="position:static" -->
 <div class="navbar navbar-expand-sm bg-dark navbar-dark">
   <h3><a class="navbar-brand" href="#">Mon site</a></h3>
   <ul class="navbar-nav">

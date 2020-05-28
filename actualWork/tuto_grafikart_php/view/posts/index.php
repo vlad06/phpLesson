@@ -6,7 +6,7 @@
   <h2><?php echo $v->name; ?></h2>
   <?php echo $v->content; ?>
   <p>
-    <a href="<?php echo Router::url("posts/view/id:{$v->id}/slug:{$v->slug}"); ?>">
+    <a href="<?php echo Router::url("posts/view/id:{$v->id}/slug:$v->slug"); ?>">
       Lire la suite &rarr;
     </a>
   </p>
